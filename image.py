@@ -1,4 +1,5 @@
 from PIL  import  Image
+from PIL import ImageFilter #Modulo de filtros
 
 try:
 	img = Image.open("image/im2.jpg") #abre la imagen, recibe la ruta 
@@ -19,9 +20,12 @@ try:
 
 	#img = img.resize( (100,200) ) #Redimenciona la imagen, recibe una tupla con ancho, alto
 
-	box = (300,100,400,900) 
+	#box = (300,100,400,900) 
 
-	img = img.crop(box) #Extrae la porcion de una imagen 
+	#img = img.crop(box) #Extrae la porcion de una imagen 
+
+	img = img.filter(ImageFilter.BLUR) #aplica un filtro que se encuentre dentro de la libreria
+
 
 	img.show() #abre la imagen 
 except IOError:
