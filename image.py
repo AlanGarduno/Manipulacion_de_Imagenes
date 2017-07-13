@@ -24,8 +24,10 @@ try:
 
 	#img = img.crop(box) #Extrae la porcion de una imagen 
 
-	img = img.filter(ImageFilter.BLUR) #aplica un filtro que se encuentre dentro de la libreria
+	#img = img.filter(ImageFilter.BLUR) #aplica un filtro que se encuentre dentro de la libreria
 
+	copy = im.resize(  (100,200)  )
+	img.paste(copy,  (100,200)   ) #copia una imagen, en este caso dentro de si misma
 
 	img.show() #abre la imagen 
 except IOError:
